@@ -4,9 +4,6 @@
 *.iws
 build
 out
-.openshift
-webapps
-pom.xml
 
 # Package Files #
 *.jar
