@@ -1,28 +1,29 @@
 apply plugin: 'java'
+apply plugin: 'war'
 apply plugin: 'idea'
 
-defaultTasks 'clean','build'
+defaultTasks 'clean'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile "commons-beanutils:commons-beanutils:1.8.3"
-    compile "org.apache.commons:commons-lang3:3.1"
-    compile "commons-collections:commons-collections:3.2.1"
+    compile(
+	"commons-beanutils:commons-beanutils:1.8.3",
+     	"org.apache.commons:commons-lang3:3.1",
+     	"commons-collections:commons-collections:3.2.1",
+        "com.sun.jersey:jersey-core:1.17",
+        "com.sun.jersey:jersey-server:1.17",
+        "com.sun.jersey:jersey-servlet:1.17",
+        "com.sun.jersey:jersey-json:1.17"
+	)
 }
 
 jar {
+    enabled = true
+	
     manifest {
         attributes("Main-Class":"org.vivek.utils.RandomNameGenerator")
     }
-
-    dependsOn configurations.runtime
-
-    from { 
-    	configurations.runtime.collect { 
-    		it.isDirectory() ? it : zipTree(it) 
-    		} 
-    	}
 }

@@ -3,6 +3,9 @@ package org.vivek.utils;
 import org.apache.commons.collections.map.MultiValueMap;
 import org.apache.commons.lang3.StringUtils;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -12,6 +15,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.logging.Logger;
 
+@Path("/")
 public class RandomNameGenerator {
 
 	private static List<String> inputNameData;
@@ -19,10 +23,8 @@ public class RandomNameGenerator {
 	private static Random random = new Random();
 	private static Logger logger = Logger.getLogger(RandomNameGenerator.class.getName());
 
-	public static void main(String args[]) {
-		System.out.println(RandomNameGenerator.getRandomName());
-	}
-
+	@GET
+	@Produces("text/plain")
 	public static String getRandomName() {
 		if (inputNameData == null) {
 			try {
