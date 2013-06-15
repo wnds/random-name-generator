@@ -7,11 +7,10 @@ Build
 -----
 This project uses Gradle build. 
 
-    gradle
-        
-Run
----
+To generate a jar file use
 
-Gradle build will generate random-name-generator.jar
+    gradle jar
+    
+To generate [Jersey](https://jersey.java.net/) based REST service use
 
-    java -jar random-name-generator.jar
+    gradle war
