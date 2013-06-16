@@ -46,6 +46,31 @@ Push changes to OpenShift
 
     git push
 
+Jenkins configuration for Execute shell for Gradle build
+
+    # Build/update libs and run user pre_build and build
+    #gear build
+
+    # Set a writable Gradle Home Dir
+    echo SETTING GRADLE HOME
+    export GRADLE_USER_HOME=$OPENSHIFT_DATA_DIR/gradle
+ 
+    # Mark gradlew as executable
+    chmod +x gradlew
+    ./gradlew build
+
+    # Run tests here
+
+    # Deploy new build
+
+    # Stop app
+    $GIT_SSH $upstream_ssh 'gear stop --conditional'
+
+    # Push content back to application
+    rsync ~/.m2/ $upstream_ssh:~/.m2/
+    rsync $WORKSPACE/build/libs/. $upstream_ssh:'${OPENSHIFT_REPO_DIR}webapps/'
+    rsync $WORKSPACE/.openshift/ $upstream_ssh:'${OPENSHIFT_REPO_DIR}.openshift/'
+
 After build and depoyment, app can be accessed at 
 
     http://test-<namespace>.rhcloud.com/repo/randomName
