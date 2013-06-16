@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.logging.Logger;
 
-@Path("/")
+@Path("/randomName")
 public class RandomNameGenerator {
 
 	private static List<String> inputNameData;
