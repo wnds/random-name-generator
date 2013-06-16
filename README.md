@@ -24,29 +24,29 @@ To deploy this project in OpenShift, create a new account at [http://openshift.r
 
 Install rhc gem
 
-   sudo gem install rhc
-   gem update rhc
-   rhc setup
+    sudo gem install rhc
+    gem update rhc
+    rhc setup
 
 Cretae namespace
 
-  rhc domain create -n <namespace>
+    rhc domain create -n <namespace>
 
 Create test app
 
-  rhc app-create test jbossews-2.0
+    rhc app-create test jbossews-2.0
 
 Add github repo
 
-  cd test
-  git remote add upstream -m master git@github.com:mail2vks/random-name-generator.git
-  git pull -s recursive -X theirs upstream master 
+    cd test
+    git remote add upstream -m master git@github.com:mail2vks/random-name-generator.git
+    git pull -s recursive -X theirs upstream master 
 
 Push changes to OpenShift
 
- git push
+    git push
 
 After build and depoyment, app can be accessed at [http://test-<namespace>.rhcloud.com/repo/randomName](http://test-<namespace>.rhcloud.com/repo/randomName)
 
-Reference README
-  [https://github.com/ramr/openshift-tomcat7-websockets/blob/master/README.md](https://github.com/ramr/openshift-tomcat7-websockets/blob/master/README.md)
+Reference for README.md
+    [https://github.com/ramr/openshift-tomcat7-websockets/blob/master/README.md](https://github.com/ramr/openshift-tomcat7-websockets/blob/master/README.md)
