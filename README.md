@@ -48,9 +48,9 @@ Push changes to OpenShift
 
 After build and depoyment, app can be accessed at 
 
-    [http://test-<namespace>.rhcloud.com/repo/randomName](http://test-<namespace>.rhcloud.com/repo/randomName)
+    http://test-<namespace>.rhcloud.com/repo/randomName
 
 Reference for README.md
 
-    [https://github.com/ramr/openshift-tomcat7-websockets/blob/master/README.md](https://github.com/ramr/openshift-tomcat7-websockets/blob/master/README.md)
+> [https://github.com/ramr/openshift-tomcat7-websockets/blob/master/README.md](https://github.com/ramr/openshift-tomcat7-websockets/blob/master/README.md)
 
