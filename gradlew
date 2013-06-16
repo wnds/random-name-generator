@@ -65,8 +65,8 @@ cd "`dirname \"$PRG\"`/" >&-
 APP_HOME="`pwd -P`"
 cd "$SAVED" >&-
 
-echo $CLASSPATH
 CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+echo $CLASSPATH
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
