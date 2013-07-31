@@ -18,8 +18,6 @@ To generate [Jersey](https://jersey.java.net/) based REST service use
 Deployment
 ----------
 
-This project is deployed in Tomcat7 running on OpenShift PAAS at [http://randomname-viveks.rhcloud.com/repo/randomName](http://randomname-viveks.rhcloud.com/repo/randomName)
-
 To deploy this project in OpenShift, create a new account at [http://openshift.redhat.com](http://openshift.redhat.com)
 
 Install rhc gem
